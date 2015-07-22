@@ -77,25 +77,25 @@ Ssh est un protocole qui permet de se connecter à une machine distante avec une
 </div>
 <div class="section" id="installer-ssh">
 <span id="ssh"></span><h2>Installer ssh</h2>
-<div class="highlight"><pre><span class="c"># aptitude install ssh</span>
+<div class="highlight"><pre>sudo aptitude install ssh
 
-<span class="c"># ssh root@serveur.com</span>
+ssh root@serveur.com
 </pre></div>
 <p>Si votre connexion est réussie, alors votre serveur ssh fonctionne.</p>
 </div>
 <div class="section" id="creer-un-nouvel-utilisateur">
 <span id="utilisateur"></span><h2>Créer un nouvel utilisateur</h2>
 <p>Avant d'interdire root, il faut créer un utilisateur. Nous utiliserons cet utilisateur pour nous connecter en ssh à la place de root.</p>
-<div class="highlight"><pre><span class="c"># useradd -m -d /home/monutilisateur -s /bin/bash monutilisateur</span>
+<div class="highlight"><pre>sudo useradd -m -d /home/monutilisateur -s /bin/bash monutilisateur
 </pre></div>
 <p>Afin d'avoir un serveur mieux sécurisé, vous allez mettre un mot de passe fort à notre nouvel utilisateur.</p>
-<div class="highlight"><pre><span class="c"># passwd monutilisateur</span>
+<div class="highlight"><pre>sudo passwd monutilisateur
 Enter new UNIX password:
 Retype new UNIX password:
 passwd : le mot de passe a été mis à jour avec succès
 </pre></div>
 <p>Avant de bloquer root, nous allons tester la connexion avec notre utilisateur.</p>
-<div class="highlight"><pre><span class="c">#ssh monutilisateur@serveur.con</span>
+<div class="highlight"><pre>ssh monutilisateur@serveur.con
 passwd:
 </pre></div>
 <p>Si tout est ok, nous pouvons aller bloquer la connexion ssh en tant que root</p>
@@ -104,7 +104,7 @@ passwd:
 <span id="root"></span><h2>Empêcher l'accès à root</h2>
 <p>Pour bloquer l'utilisateur root, il faut aller configurer le démon ssh pour qu'il n'accepte plus les connexions de l'utilisateur root.</p>
 <p>Le demon ssh est sshd</p>
-<div class="highlight"><pre><span class="c"># vim /etc/ssh/sshd_config</span>
+<div class="highlight"><pre>sudo vim /etc/ssh/sshd_config
 </pre></div>
 <p>Remplacer:</p>
 <div class="highlight"><pre>PermitRootLogin yes
@@ -113,7 +113,7 @@ passwd:
 <div class="highlight"><pre>PermitRootLogin no
 </pre></div>
 <p>Une fois la modification effectué, il ne nous reste plus qu'à tester le refus de connexion pour l'utilisateur root.</p>
-<div class="highlight"><pre><span class="nv">$ </span>ssh root@serveur.com
+<div class="highlight"><pre>ssh root@serveur.com
 </pre></div>
 <p>Si vous n'arrivez pas à vous connecter, alors que vous tapez le bon mot de passe, celà signifie que l'utilisateur root n'a pas le droit de se connecter.</p>
 </div>
@@ -121,16 +121,16 @@ passwd:
 <span id="port"></span><h2>Changer le port</h2>
 <p>Le port SSH par défaut est le 22. Il est là cible de multiples attaques principalement faites par des bots. Afin de réduire le nombre d'attaques par bot, nous allons modifier le port de connexion ssh</p>
 <p>Et remplacer le port 22 par un autre port de votre choix:</p>
-<div class="highlight"><pre><span class="c"># vim /etc/ssh/sshd_config</span>
+<div class="highlight"><pre>sudo vim /etc/ssh/sshd_config
 
 Port 2345
 
 :wq
 
-<span class="c"># /etc/init.d/ssh restart</span>
+sudo /etc/init.d/ssh restart
 </pre></div>
 <p>Pour se connecter en ssh, il faut préciser le nouveau port lors de la connexion</p>
-<div class="highlight"><pre><span class="nv">$ </span>ssh monutilisateur@serveur.com -p 2345
+<div class="highlight"><pre>ssh monutilisateur@serveur.com -p 2345
 </pre></div>
 </div>
 <div class="section" id="conclusion">

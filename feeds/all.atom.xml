@@ -29,25 +29,25 @@ Ssh est un protocole qui permet de se connecter à une machine distante avec une
 &lt;/div&gt;
 &lt;div class="section" id="installer-ssh"&gt;
 &lt;span id="ssh"&gt;&lt;/span&gt;&lt;h2&gt;Installer ssh&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# aptitude install ssh&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo aptitude install ssh
 
-&lt;span class="c"&gt;# ssh root@serveur.com&lt;/span&gt;
+ssh root@serveur.com
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Si votre connexion est réussie, alors votre serveur ssh fonctionne.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="creer-un-nouvel-utilisateur"&gt;
 &lt;span id="utilisateur"&gt;&lt;/span&gt;&lt;h2&gt;Créer un nouvel utilisateur&lt;/h2&gt;
 &lt;p&gt;Avant d'interdire root, il faut créer un utilisateur. Nous utiliserons cet utilisateur pour nous connecter en ssh à la place de root.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# useradd -m -d /home/monutilisateur -s /bin/bash monutilisateur&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo useradd -m -d /home/monutilisateur -s /bin/bash monutilisateur
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Afin d'avoir un serveur mieux sécurisé, vous allez mettre un mot de passe fort à notre nouvel utilisateur.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# passwd monutilisateur&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo passwd monutilisateur
 Enter new UNIX password:
 Retype new UNIX password:
 passwd : le mot de passe a été mis à jour avec succès
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Avant de bloquer root, nous allons tester la connexion avec notre utilisateur.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#ssh monutilisateur@serveur.con&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;ssh monutilisateur@serveur.con
 passwd:
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Si tout est ok, nous pouvons aller bloquer la connexion ssh en tant que root&lt;/p&gt;
@@ -56,7 +56,7 @@ passwd:
 &lt;span id="root"&gt;&lt;/span&gt;&lt;h2&gt;Empêcher l'accès à root&lt;/h2&gt;
 &lt;p&gt;Pour bloquer l'utilisateur root, il faut aller configurer le démon ssh pour qu'il n'accepte plus les connexions de l'utilisateur root.&lt;/p&gt;
 &lt;p&gt;Le demon ssh est sshd&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# vim /etc/ssh/sshd_config&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo vim /etc/ssh/sshd_config
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Remplacer:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;PermitRootLogin yes
@@ -65,7 +65,7 @@ passwd:
 &lt;div class="highlight"&gt;&lt;pre&gt;PermitRootLogin no
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Une fois la modification effectué, il ne nous reste plus qu'à tester le refus de connexion pour l'utilisateur root.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh root@serveur.com
+&lt;div class="highlight"&gt;&lt;pre&gt;ssh root@serveur.com
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Si vous n'arrivez pas à vous connecter, alors que vous tapez le bon mot de passe, celà signifie que l'utilisateur root n'a pas le droit de se connecter.&lt;/p&gt;
 &lt;/div&gt;
@@ -73,16 +73,16 @@ passwd:
 &lt;span id="port"&gt;&lt;/span&gt;&lt;h2&gt;Changer le port&lt;/h2&gt;
 &lt;p&gt;Le port SSH par défaut est le 22. Il est là cible de multiples attaques principalement faites par des bots. Afin de réduire le nombre d'attaques par bot, nous allons modifier le port de connexion ssh&lt;/p&gt;
 &lt;p&gt;Et remplacer le port 22 par un autre port de votre choix:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# vim /etc/ssh/sshd_config&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo vim /etc/ssh/sshd_config
 
 Port 2345
 
 :wq
 
-&lt;span class="c"&gt;# /etc/init.d/ssh restart&lt;/span&gt;
+sudo /etc/init.d/ssh restart
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Pour se connecter en ssh, il faut préciser le nouveau port lors de la connexion&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh monutilisateur@serveur.com -p 2345
+&lt;div class="highlight"&gt;&lt;pre&gt;ssh monutilisateur@serveur.com -p 2345
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="conclusion"&gt;
