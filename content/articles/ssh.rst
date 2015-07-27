@@ -4,7 +4,7 @@ Configurer son serveur ssh
 :date: 2014-05-04
 :tags: ssh
 :category: Sécurité
-:author: Barascut Jérémy
+:author: Gnupyx
 
 
 Introduction

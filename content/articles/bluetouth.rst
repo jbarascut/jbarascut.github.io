@@ -4,7 +4,7 @@ Désactiver le bluetooth au démarrage du PC.
 :date: 2014-07-14
 :tags: bluetooth, ubuntu
 :category: Sécurité
-:author: Barascut Jérémy
+:author: Gnupyx
 
 
 Par défaut, lorsque j'allume mon PC portable, le bluetooth est démarré. Vu que je ne m'en sers pas et que je désire gagner en autonomie, j'ai décidé de le désactiver dès le démarrage.

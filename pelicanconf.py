@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Gnupyx'
 SITENAME = u'Gnupyx'
-SITEURL = ''
+SITEURL = 'http://gnupyx.ninja'
 
 PATH = 'content'
 
@@ -13,7 +13,7 @@ TIMEZONE = 'Europe/Paris'
 DEFAULT_LANG = u'fr'
 
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
+FEED_ALL_ATOM = True
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None

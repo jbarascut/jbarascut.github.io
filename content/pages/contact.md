@@ -1,9 +1,11 @@
 Title: Contact
 Heading: Hello! My Name is Jérémy Barascut
-Subheading: Some subheading sentence to put int.
+Subheading: Le libre comme mode de vie.
 Template: contact
-Date: 2014-05-04
+Date: 2015-07-27
 
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, quia, modi suscipit deleniti veniam voluptatum corporis neque sit error earum recusandae velit alias unde laudantium explicabo veritatis laboriosam cum totam ipsum voluptatem dicta nemo necessitatibus! Repellat, laudantium, at deserunt velit similique natus quia quisquam ex tempore praesentium inventore quod eos.
+Jeremy Barascut aka Gnupyx est devenu ingénieur informatique après avoir fait un BTS, une License et un Master.
+Je suis à fond dans le logiciel libre. Le but de ce blog est de me servir de bloc note, de partager mes connaissances et aussi je l'espère m'améliorer en Français écrit ^^
+Et oui c'est possible !
 

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    Powerline-shell
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="http://gnupyx.ninja/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://gnupyx.ninja/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://gnupyx.ninja/theme/css/main.css">
+
+    <link rel="stylesheet" href="http://gnupyx.ninja/theme/css/blog.css">
+    <link rel="stylesheet" href="http://gnupyx.ninja/theme/css/github.css">
+        <link href="http://gnupyx.ninja/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Gnupyx Atom Feed" />
+        <script src="http://gnupyx.ninja/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="http://gnupyx.ninja"><h1><i class="icon-coffee"></i> Gnupyx</h1></a>
+        <p id="site-desc"></p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+                <li><a href="http://gnupyx.ninja/">Blog</a></li>
+                <li><a href="http://gnupyx.ninja/pages/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+<footer id="site-info">
+    <p>
+    </p>
+    <p>
+    </p>
+</footer></header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2015-07-27T00:00:00+02:00" pubdate>
+                            Mon 27 July 2015
+                        </time>
+                        <a href="http://gnupyx.ninja/drafts/powerline-shell.html" rel="bookmark"><h1>Powerline-shell</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>Si vous êtes un fanatique de la ligne de commandes, alors <a class="reference external" href="https://github.com/milkbikis/powerline-shell">Powerline-shell</a> est fait pour vous.</p>
+<p>Powerline-shell est un script python remplaçant votre prompt shell par quelque chose de plus évolué.</p>
+<p>Powerline améliore votre prompt shell si vous utilisez Bash, ZSH ou Fish</p>
+<div class="section" id="installation">
+<h2>Installation</h2>
+<p>J'ai pris l'habitude de mettre les scripts et autres logiciels dans un dossier ~/App</p>
+<div class="section" id="les-fonts">
+<h3>Les fonts:</h3>
+<p>Pour utiliser Powerline, il faut télécharger un pack de police adapté.</p>
+<div class="highlight"><pre>mkdir App <span class="o">&amp;&amp;</span> <span class="nb">cd </span>App
+
+git clone https://github.com/powerline/fonts.git
+
+<span class="nb">cd </span>fonts
+
+./install.sh
+</pre></div>
+<p>Sur Debian les fonts seront installées sous ~/.fonts</p>
+</div>
+<div class="section" id="id2">
+<h3>Powerline-shell:</h3>
+<div class="highlight"><pre>git clone https://github.com/milkbikis/powerline-shell
+
+<span class="nb">cd </span>powerline-shell
+
+./install.py
+</pre></div>
+<p>L'installation de powerline-shell est terminée.</p>
+</div>
+<div class="section" id="bash">
+<h3>Bash:</h3>
+<p>Avec Bash, il faut ajouter les lignes suivantes à votre <strong>.bashrc</strong>:</p>
+<div class="highlight"><pre><span class="k">function</span> _update_ps1<span class="o">()</span> <span class="o">{</span>
+   <span class="nb">export </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>~/App/powerline-shell/powerline-shell.py <span class="nv">$?</span> 2&gt; /dev/null<span class="k">)</span><span class="s2">&quot;</span>
+<span class="o">}</span>
+
+<span class="nb">export </span><span class="nv">PROMPT_COMMAND</span><span class="o">=</span><span class="s2">&quot;_update_ps1; </span><span class="nv">$PROMPT_COMMAND</span><span class="s2">&quot;</span>
+</pre></div>
+<p>Recharger le .bashrc</p>
+<div class="highlight"><pre><span class="nb">source</span> ~/.bashrc
+</pre></div>
+</div>
+<div class="section" id="zsh">
+<h3>ZSH:</h3>
+<p>Avec ZSH, il faut ajouter les lignes suivantes à votre <strong>.zshrc</strong>:</p>
+<div class="highlight"><pre><span class="k">function</span> powerline_precmd<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">export </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>~/App/powerline-shell/powerline-shell.py <span class="nv">$?</span> --shell zsh 2&gt; /dev/null<span class="k">)</span><span class="s2">&quot;</span>
+<span class="o">}</span>
+
+<span class="k">function</span> install_powerline_precmd<span class="o">()</span> <span class="o">{</span>
+  <span class="k">for</span> s in <span class="s2">&quot;</span><span class="si">${</span><span class="nv">precmd_functions</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">do</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$s</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;powerline_precmd&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+      <span class="k">return</span>
+    <span class="k">fi</span>
+  <span class="k">done</span>
+  precmd_functions+<span class="o">=(</span>powerline_precmd<span class="o">)</span>
+<span class="o">}</span>
+
+install_powerline_precmd
+</pre></div>
+</div>
+<div class="section" id="fish">
+<h3>Fish:</h3>
+<p>Avec Fish, il faut redefinir le prompt dans <strong>~/config/fish/config.fish</strong>:</p>
+<div class="highlight"><pre><span class="k">function</span> fish_prompt
+    ~/powerline-shell.py <span class="nv">$status</span> --shell bare ^/dev/null
+end
+</pre></div>
+</div>
+<div class="section" id="terminator">
+<h3>Terminator:</h3>
+</div>
+</div>
+<div class="section" id="utilisation">
+<h2>Utilisation</h2>
+<p>User simple ou root
+Droit d'accès interdit
+Virtualenv
+Branch git/svn/hg
+Couleur en cas de commande incorrecte
+Facilement extensible et customisable</p>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion</h2>
+<p>Powerline-shell est devenu pour moi indispensable, un peu comme git l'est devenu quand j'ai débuté le dev.</p>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="http://gnupyx.ninja/category/linux.html">Linux</a></p>
+                        <p>Tags: <a href="http://gnupyx.ninja/tag/bash.html">bash</a>, <a href="http://gnupyx.ninja/tag/powerline.html">powerline</a>, </p>
+                    </aside>
+                    <hr/>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+
+        <script src="http://gnupyx.ninja/theme/js/main.js"></script>
+    </body>
+</html>
