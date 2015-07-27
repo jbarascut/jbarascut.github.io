@@ -87,20 +87,50 @@ git clone https://github.com/powerline/fonts.git
 </div>
 <div class="section" id="bash">
 <h3>Bash:</h3>
-<p>Pour utiliser powerline avec Bash, il faut ajouter les lignes suivantes à votre <strong>.bashrc</strong></p>
+<p>Avec Bash, il faut ajouter les lignes suivantes à votre <strong>.bashrc</strong>:</p>
 <div class="highlight"><pre><span class="k">function</span> _update_ps1<span class="o">()</span> <span class="o">{</span>
-   <span class="nb">export </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>~/powerline-shell.py <span class="nv">$?</span> 2&gt; /dev/null<span class="k">)</span><span class="s2">&quot;</span>
+   <span class="nb">export </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>~/App/powerline-shell/powerline-shell.py <span class="nv">$?</span> 2&gt; /dev/null<span class="k">)</span><span class="s2">&quot;</span>
 <span class="o">}</span>
 
 <span class="nb">export </span><span class="nv">PROMPT_COMMAND</span><span class="o">=</span><span class="s2">&quot;_update_ps1; </span><span class="nv">$PROMPT_COMMAND</span><span class="s2">&quot;</span>
 </pre></div>
+<p>Recharger le .bashrc</p>
+<div class="highlight"><pre><span class="nb">source</span> ~/.bashrc
+</pre></div>
 </div>
 <div class="section" id="zsh">
 <h3>ZSH:</h3>
+<p>Avec ZSH, il faut ajouter les lignes suivantes à votre <strong>.zshrc</strong>:</p>
+<div class="highlight"><pre><span class="k">function</span> powerline_precmd<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">export </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>~/App/powerline-shell/powerline-shell.py <span class="nv">$?</span> --shell zsh 2&gt; /dev/null<span class="k">)</span><span class="s2">&quot;</span>
+<span class="o">}</span>
+
+<span class="k">function</span> install_powerline_precmd<span class="o">()</span> <span class="o">{</span>
+  <span class="k">for</span> s in <span class="s2">&quot;</span><span class="si">${</span><span class="nv">precmd_functions</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">do</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$s</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;powerline_precmd&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+      <span class="k">return</span>
+    <span class="k">fi</span>
+  <span class="k">done</span>
+  precmd_functions+<span class="o">=(</span>powerline_precmd<span class="o">)</span>
+<span class="o">}</span>
+
+install_powerline_precmd
+</pre></div>
 </div>
 <div class="section" id="fish">
 <h3>Fish:</h3>
+<p>Avec fish, il faut redefinir le fishèprompt dans <strong>~/config/fish/config.fish</strong>:</p>
+<div class="highlight"><pre><span class="k">function</span> fish_prompt
+    ~/powerline-shell.py <span class="nv">$status</span> --shell bare ^/dev/null
+end
+</pre></div>
 </div>
+<div class="section" id="terminator">
+<h3>Terminator:</h3>
+</div>
+</div>
+<div class="section" id="utilisation">
+<h2>Utilisation</h2>
 </div>
 <div class="section" id="conclusion">
 <h2>Conclusion</h2>
