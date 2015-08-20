@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    The fucking script !!!!
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="http://gnupyx.ninja/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://gnupyx.ninja/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://gnupyx.ninja/theme/css/main.css">
+
+    <link rel="stylesheet" href="http://gnupyx.ninja/theme/css/blog.css">
+    <link rel="stylesheet" href="http://gnupyx.ninja/theme/css/github.css">
+        <link href="http://gnupyx.ninja/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Gnupyx Atom Feed" />
+        <script src="http://gnupyx.ninja/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="http://gnupyx.ninja"><h1><i class="icon-coffee"></i> Gnupyx</h1></a>
+        <p id="site-desc"></p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+                <li><a href="http://gnupyx.ninja/">Blog</a></li>
+                <li><a href="http://gnupyx.ninja/pages/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+<footer id="site-info">
+    <p>
+    </p>
+    <p>
+    </p>
+</footer></header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2015-08-20T00:00:00+02:00" pubdate>
+                            jeu. 20 août 2015
+                        </time>
+                        <a href="http://gnupyx.ninja/drafts/the-fucking-script.html" rel="bookmark"><h1>The fucking script !!!!</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>Ne vous inquiétez pas je n'ai pas la haine après un script, bien le contraire.
+Si vous êtes comme moi à toujours à oublier ce petit fripon de sudo devant apt-get alors <a class="reference external" href="https://github.com/nvbn/thefuck">thefuck</a> peut résoudre facilement votre problème. Ainsi que d'autres problèmes de commandes :)
+ish</p>
+<p>thefuck est un petit script python et fonctionne avec bash, zsh ou tout autre shell</p>
+<div class="section" id="installation">
+<h2>Installation</h2>
+<p>Le reflex à avoir lorsque l'on veut installer un programme en python est de voir si il est disponible dans <a class="reference external" href="https://pypi.python.org/pypi/pip">pip</a> et installer le programme avec</p>
+<dl class="docutils">
+<dt>Sur Debian ou dérivés:</dt>
+<dd>sudo apt-get install python-pip</dd>
+</dl>
+<p>Sur Redhat et dérives:</p>
+<div class="highlight"><pre>sudo yum install python-pip
+</pre></div>
+<p>Sur Arch
+Il y'a déjà un paquet pour Arch</p>
+<div class="highlight"><pre>sudo pacman -S thefuck
+</pre></div>
+<p>Ou avec pip</p>
+<div class="highlight"><pre>sudo pacman -Suy python-pip
+</pre></div>
+<p>Puis avec pip</p>
+<div class="highlight"><pre>sudo pip install thefuck
+</pre></div>
+</div>
+<div class="section" id="shell">
+<h2>Shell</h2>
+<p>Dans votre shell, il faut ajouter les lignes suivantes, par exemple dans votre <strong>.bashrc</strong>:</p>
+<div class="highlight"><pre><span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>thefuck --alias<span class="k">)</span><span class="s2">&quot;</span>
+<span class="c"># Et si fuck vous plait pas vous pouvez préciser un alias</span>
+<span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>thefuck --alias tux<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+<p>Recharger le .bashrc</p>
+<div class="highlight"><pre><span class="nb">source</span> ~/.bashrc
+</pre></div>
+<p>Thefuck corrige pas mal de commande comme cp, git, grep, ls, mercurial, mkdir, pip, sudo, apt-get, yum, rm etc</p>
+<p>Il est même possible de créer ces propres règles simplement</p>
+<div class="highlight"><pre>match<span class="o">(</span><span class="nb">command</span>: Command, settings: Settings<span class="o">)</span> -&gt; bool
+get_new_command<span class="o">(</span><span class="nb">command</span>: Command, settings: Settings<span class="o">)</span> -&gt; str <span class="p">|</span> list<span class="o">[</span>str<span class="o">]</span>
+</pre></div>
+<p>Plus d'infos <a class="reference external" href="https://github.com/nvbn/thefuck#creating-your-own-rules">ici</a></p>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion</h2>
+<p>Thefuck me simplifie la vie en corrigeant la plupart des commandes fausses que je veux executer. A utiliser et abuser!</p>
+</div>
+
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="http://gnupyx.ninja/category/linux.html">Linux</a></p>
+                        <p>Tags: <a href="http://gnupyx.ninja/tag/bash.html">bash</a>, <a href="http://gnupyx.ninja/tag/thefuck.html">thefuck</a>, </p>
+                    </aside>
+                    <hr/>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+
+        <script src="http://gnupyx.ninja/theme/js/main.js"></script>
+    </body>
+</html>
