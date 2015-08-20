@@ -6,7 +6,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Gnupyx</title>
+        <title>    The fucking script !!!!
+</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
             <link rel="stylesheet" href="http://gnupyx.ninja/theme/css/normalize.css">
@@ -53,57 +54,65 @@
                         </time>
                         <a href="http://gnupyx.ninja/the-fucking-script.html" rel="bookmark"><h1>The fucking script !!!!</h1></a>
                     </header>
+
                     <section class="post-content">
                         <p>Ne vous inquiétez pas je n'ai pas la haine après un script, bien le contraire.
 Si vous êtes comme moi à toujours à oublier ce petit fripon de sudo devant apt-get alors <a class="reference external" href="https://github.com/nvbn/thefuck">thefuck</a> peut résoudre facilement votre problème. Ainsi que d'autres problèmes de commandes :)
 ish</p>
-<p>thefuck est un ...</p>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2014-07-14T00:00:00+02:00" pubdate>
-                            lun. 14 juillet 2014
-                        </time>
-                        <a href="http://gnupyx.ninja/desactiver-le-bluetooth-au-demarrage-du-pc.html" rel="bookmark"><h1>Désactiver le bluetooth au démarrage du PC.</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <p>Par défaut, lorsque j'allume mon PC portable, le bluetooth est démarré. Vu que je ne m'en sers pas et que je désire gagner en autonomie, j'ai décidé de le désactiver dès le démarrage.</p>
-<p>Pour désactiver le bluetooth c'est très simple, il suffit de rajouter une commande ...</p>
-                    </section>
-                </article>
-            </li>
-            <hr/>
-            <li>
-                <article class="post-entry">
-                    <header class="entry-header">
-                        <time class="post-time" datetime="2014-05-04T00:00:00+02:00" pubdate>
-                            dim. 04 mai 2014
-                        </time>
-                        <a href="http://gnupyx.ninja/configurer-son-serveur-ssh.html" rel="bookmark"><h1>Configurer son serveur ssh</h1></a>
-                    </header>
-                    <section class="post-content">
-                        <div class="section" id="introduction">
-<h2>Introduction</h2>
-<p>D'après <a class="reference external" href="http://www.futura-sciences.com/magazines/high-tech/infos/dico/d/internet-ssh-494/">futura_sciences</a> :</p>
-<blockquote>
-Ssh est un protocole qui permet de se connecter à une machine distante avec une liaison sécurisée. Les données sont cryptées entre machines. Il permet d'exécuter des commandes sur un serveur distant.</blockquote>
+<p>thefuck est un petit script python et fonctionne avec bash, zsh ou tout autre shell</p>
+<img alt="the fuck command line" src="images/thefuck.gif" />
+<div class="section" id="installation">
+<h2>Installation</h2>
+<p>Le reflex à avoir lorsque l'on veut installer un programme en python est de voir si il est disponible dans <a class="reference external" href="https://pypi.python.org/pypi/pip">pip</a> et installer le programme avec</p>
+<p>Sur Debian ou dérivés:</p>
+<div class="highlight"><pre>sudo apt-get install python-pip
+</pre></div>
+<p>Sur Redhat et dérives:</p>
+<div class="highlight"><pre>sudo yum install python-pip
+</pre></div>
+<p>Sur Arch
+Il y'a déjà un paquet pour Arch</p>
+<div class="highlight"><pre>sudo pacman -S thefuck
+</pre></div>
+<p>Ou avec pip</p>
+<div class="highlight"><pre>sudo pacman -Suy python-pip
+</pre></div>
+<p>Puis avec pip</p>
+<div class="highlight"><pre>sudo pip install thefuck
+</pre></div>
 </div>
-<div class="section" id="regles-de-base">
-<h2>Règles de base</h2>
-<p>Ssh est un protocole très utilisé ce qui en fait ...</p></div>
+<div class="section" id="shell">
+<h2>Shell</h2>
+<p>Dans votre shell, il faut ajouter les lignes suivantes, par exemple dans votre <strong>.bashrc</strong>:</p>
+<div class="highlight"><pre><span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>thefuck --alias<span class="k">)</span><span class="s2">&quot;</span>
+<span class="c"># Et si fuck vous plait pas vous pouvez préciser un alias</span>
+<span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>thefuck --alias tux<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+<p>Recharger le .bashrc</p>
+<div class="highlight"><pre><span class="nb">source</span> ~/.bashrc
+</pre></div>
+<p>Thefuck corrige pas mal de commande comme cp, git, grep, ls, mercurial, mkdir, pip, sudo, apt-get, yum, rm etc</p>
+<p>Il est même possible de créer ces propres règles simplement</p>
+<div class="highlight"><pre>match<span class="o">(</span><span class="nb">command</span>: Command, settings: Settings<span class="o">)</span> -&gt; bool
+get_new_command<span class="o">(</span><span class="nb">command</span>: Command, settings: Settings<span class="o">)</span> -&gt; str <span class="p">|</span> list<span class="o">[</span>str<span class="o">]</span>
+</pre></div>
+<p>Plus d'infos <a class="reference external" href="https://github.com/nvbn/thefuck#creating-your-own-rules">ici</a></p>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion</h2>
+<p>Thefuck me simplifie la vie en corrigeant la plupart des commandes fausses que je veux executer. A utiliser et abuser!</p>
+</div>
+
                     </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="http://gnupyx.ninja/category/linux.html">Linux</a></p>
+                        <p>Tags: <a href="http://gnupyx.ninja/tag/bash.html">bash</a>, <a href="http://gnupyx.ninja/tag/thefuck.html">thefuck</a>, </p>
+                    </aside>
+                    <hr/>
                 </article>
             </li>
-            <hr/>
         </ol>
-        <div class="paginator">
-            Page 1 / 1
-        </div>
-
     </div>
         </div>
 
