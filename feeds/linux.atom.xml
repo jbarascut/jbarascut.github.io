@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Gnupyx</title><link href="http://gnupyx.ninja/" rel="alternate"></link><link href="http://gnupyx.ninja/feeds/linux.atom.xml" rel="self"></link><id>http://gnupyx.ninja/</id><updated>2015-08-20T00:00:00+02:00</updated><entry><title>The fucking script !!!!</title><link href="http://gnupyx.ninja/the-fucking-script.html" rel="alternate"></link><updated>2015-08-20T00:00:00+02:00</updated><author><name>Gnupyx</name></author><id>tag:gnupyx.ninja,2015-08-20:the-fucking-script.html</id><summary type="html">&lt;p&gt;Ne vous inquiétez pas je n'ai pas la haine après un script, bien le contraire.
-Si vous êtes comme moi à toujours à oublier ce petit fripon de sudo devant apt-get alors &lt;a class="reference external" href="https://github.com/nvbn/thefuck"&gt;thefuck&lt;/a&gt; peut résoudre facilement votre problème. Ainsi que d'autres problèmes de commandes :)
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Gnupyx</title><link href="http://gnupyx.ninja/" rel="alternate"></link><link href="http://gnupyx.ninja/feeds/linux.atom.xml" rel="self"></link><id>http://gnupyx.ninja/</id><updated>2015-08-20T00:00:00+02:00</updated><entry><title>The fucking script !!!!</title><link href="http://gnupyx.ninja/the-fucking-script.html" rel="alternate"></link><updated>2015-08-20T00:00:00+02:00</updated><author><name>Gnupyx</name></author><id>tag:gnupyx.ninja,2015-08-20:the-fucking-script.html</id><summary type="html">&lt;p&gt;Ne vous inquiétez pas je n'ai pas la haine après un script, bien le contraire.&lt;/p&gt;
+&lt;p&gt;Si vous êtes comme moi à toujours à oublier ce petit fripon de sudo devant apt-get alors &lt;a class="reference external" href="https://github.com/nvbn/thefuck"&gt;thefuck&lt;/a&gt; peut résoudre facilement votre problème. Ainsi que d'autres problèmes de commandes :)
 ish&lt;/p&gt;
-&lt;p&gt;thefuck est un petit script python et fonctionne avec bash, zsh ou tout autre shell&lt;/p&gt;
+&lt;p&gt;Thefuck est un script python. Il fonctionne avec bash, zsh ou tout autre shell.&lt;/p&gt;
 &lt;img alt="the fuck command line" src="images/thefuck.gif" /&gt;
 &lt;div class="section" id="installation"&gt;
 &lt;h2&gt;Installation&lt;/h2&gt;
