@@ -41,7 +41,7 @@ get_new_command&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;comman
 &lt;/div&gt;
 &lt;div class="section" id="conclusion"&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;Thefuck me simplifie la vie en corrigeant la plupart des commandes fausses que je veux executer. A utiliser et abuser!&lt;/p&gt;
+&lt;p&gt;Thefuck: Tout simplement magique.  A utiliser et abuser!&lt;/p&gt;
 &lt;/div&gt;
 </summary><category term="bash"></category><category term="thefuck"></category></entry><entry><title>Désactiver le bluetooth au démarrage du PC.</title><link href="http://gnupyx.ninja/desactiver-le-bluetooth-au-demarrage-du-pc.html" rel="alternate"></link><updated>2014-07-14T00:00:00+02:00</updated><author><name>Gnupyx</name></author><id>tag:gnupyx.ninja,2014-07-14:desactiver-le-bluetooth-au-demarrage-du-pc.html</id><summary type="html">&lt;p&gt;Par défaut, lorsque j'allume mon PC portable, le bluetooth est démarré. Vu que je ne m'en sers pas et que je désire gagner en autonomie, j'ai décidé de le désactiver dès le démarrage.&lt;/p&gt;
 &lt;p&gt;Pour désactiver le bluetooth c'est très simple, il suffit de rajouter une commande dans le fichier rc.local&lt;/p&gt;
