@@ -8,13 +8,17 @@ The fucking script !!!!
 :status: draft
 :lang: fr
 
-Ne vous inquiétez pas je n'ai pas la haine après un script, bien le contraire.
+Ne vous inquiétez pas je n'ai pas la haine après un script, bien le contraire.  
 Si vous êtes comme moi à toujours à oublier ce petit fripon de sudo devant apt-get alors thefuck_ peut résoudre facilement votre problème. Ainsi que d'autres problèmes de commandes :)
 ish
 
 thefuck est un petit script python et fonctionne avec bash, zsh ou tout autre shell
 
 .. _thefuck: https://github.com/nvbn/thefuck
+
+.. image:: images/thefuck.gif
+   :alt: the fuck command line
+
 
 Installation
 ------------
@@ -25,7 +29,10 @@ Le reflex à avoir lorsque l'on veut installer un programme en python est de voi
 .. _pip: https://pypi.python.org/pypi/pip
 
 Sur Debian ou dérivés:
-  sudo apt-get install python-pip
+
+.. code-block:: bash
+
+    sudo apt-get install python-pip
 
 Sur Redhat et dérives:
 
