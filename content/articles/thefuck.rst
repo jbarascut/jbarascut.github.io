@@ -42,21 +42,11 @@ Sur Arch
 Il y'a déjà un paquet pour Arch
 
 .. code-block:: bash
-  
+    # Avec pacman
     sudo pacman -S thefuck
-
-Ou avec pip
-
-.. code-block:: bash
-
+    # Avec PIP
     sudo pacman -Suy python-pip
-
-Puis avec pip
-
-.. code-block:: bash
-
-    sudo pip install thefuck
-
+    pip install thefuck
 
 Shell
 -----
