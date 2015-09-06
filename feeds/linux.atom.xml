@@ -37,6 +37,14 @@ get_new_command&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;comman
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Plus d'infos &lt;a class="reference external" href="https://github.com/nvbn/thefuck#creating-your-own-rules"&gt;ici&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
+&lt;div class="section" id="utilisation"&gt;
+&lt;h2&gt;Utilisation&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pacman -Suy htop
+erreur: vous ne pouvez pas effectuer cette opértion à moins d&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;être root.
+&lt;span class="nv"&gt;$ &lt;/span&gt;fuck
+sudo pacman -Suy gedit &lt;span class="o"&gt;[&lt;/span&gt;enter/↑/↓/ctrl+c&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;div class="section" id="conclusion"&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Thefuck: tout simplement magique.  A utiliser et abuser!&lt;/p&gt;
