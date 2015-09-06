@@ -13,13 +13,11 @@
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Sur Arch
 Il y'a déjà un paquet pour Arch&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;sudo pacman -S thefuck
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Ou avec pip&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;sudo pacman -Suy python-pip
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Puis avec pip&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;sudo pip install thefuck
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Avec pacman&lt;/span&gt;
+ sudo pacman -S thefuck
+ &lt;span class="c"&gt;# Avec PIP&lt;/span&gt;
+ sudo pacman -Suy python-pip
+ pip install thefuck
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="shell"&gt;
