@@ -43,7 +43,7 @@ Il y'a déjà un paquet pour Arch
 
 .. code-block:: bash
 
-   # Avec pacman
+    # Avec pacman
     sudo pacman -S thefuck
     # Avec PIP
     sudo pacman -Suy python-pip
