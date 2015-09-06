@@ -77,8 +77,18 @@ Il est même possible de créer ces propres règles simplement
 
 
 Plus d'infos ici_
-
 .. _ici: https://github.com/nvbn/thefuck#creating-your-own-rules
+
+Utilisation
+-----------
+
+.. code-block:: bash
+
+   $ pacman -Suy htop
+   erreur: vous ne pouvez pas effectuer cette opértion à moins d'être root.
+   $ fuck
+   sudo pacman -Suy gedit [enter/↑/↓/ctrl+c]
+
 
 Conclusion
 ----------
