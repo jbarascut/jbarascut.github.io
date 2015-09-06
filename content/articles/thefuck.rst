@@ -5,14 +5,12 @@ The fucking script !!!!
 :tags: bash, thefuck
 :category: Linux
 :author: Gnupyx
-:status: draft
+:status: published
 :lang: fr
 
-Ne vous inquiétez pas je n'ai pas la haine après un script, bien le contraire.  
-Si vous êtes comme moi à toujours à oublier ce petit fripon de sudo devant apt-get alors thefuck_ peut résoudre facilement votre problème. Ainsi que d'autres problèmes de commandes :)
-ish
+Ne vous inquiétez pas je n'ai pas la haine après un script, bien le contraire.   Si vous êtes comme moi à toujours à oublier ce petit fripon de sudo devant apt-get alors thefuck_ peut résoudre facilement votre problème. Ainsi que d'autres problèmes de commandes :)
 
-thefuck est un petit script python et fonctionne avec bash, zsh ou tout autre shell
+Thefuck est un script python. Il fonctionne avec bash, zsh ou tout autre shell.
 
 .. _thefuck: https://github.com/nvbn/thefuck
 
@@ -94,4 +92,4 @@ Plus d'infos ici_
 Conclusion
 ----------
 
-Thefuck me simplifie la vie en corrigeant la plupart des commandes fausses que je veux executer. A utiliser et abuser!
+Thefuck: tout simplement magique.  A utiliser et abuser! 

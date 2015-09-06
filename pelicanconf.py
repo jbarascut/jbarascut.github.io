@@ -31,7 +31,6 @@ CUSTOM_MENUITEMS = (('Blog', ''),
 
 CONTACT_EMAIL = "contact@gnupyx.fr"
 CONTACTS = (('linkedin', 'https://www.linkedin.com/pub/j%C3%A9r%C3%A9my-barascut/22/107/446'),
-            ('twitter', 'https://twitter.com/gnupyx'),
             ('github', 'https://github.com/jbarascut'),)
 
 
@@ -41,9 +40,6 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 #         ('Jinja2', 'http://jinja.pocoo.org/'),
 #         ('You can modify those links in your config file', '#'),)
 
-# Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
 
